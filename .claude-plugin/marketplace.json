@@ -16,7 +16,7 @@
         "url": "https://github.com/fipnooone/claudikins-kernel.git"
       },
       "description": "Structured workflow plugin enforcing plan → execute → verify → ship with isolated agents, mandatory checkpoints, and state persistence.",
-      "version": "1.3.0"
+      "version": "1.3.1"
     },
     {
       "name": "claudikins-tool-executor",
