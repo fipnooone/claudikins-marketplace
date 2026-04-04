@@ -136,10 +136,10 @@ Choose your path based on what you want to accomplish.
 
 Four commands that enforce quality through gates:
 
-- `/claudikins:kernel-plan` - Iterative requirements gathering, parallel research agents, multiple approaches with trade-offs, section-by-section drafting
-- `/claudikins:kernel-execute` - Tasks run in isolated git branches with fresh context. Two-stage review: spec compliance first, code quality second
-- `/claudikins:kernel-verify` - Runs your code and watches it work. The catastrophiser agent observes actual output, not just test results
-- `/claudikins:kernel-ship` - Documentation updates via GRFP methodology, commit message drafting, PR creation with human approval at every stage
+- `/claudikins-kernel:outline` - Iterative requirements gathering, parallel research agents, multiple approaches with trade-offs, section-by-section drafting
+- `/claudikins-kernel:execute` - Tasks run in isolated git branches with fresh context. Two-stage review: spec compliance first, code quality second
+- `/claudikins-kernel:verify` - Runs your code and watches it work. The catastrophiser agent observes actual output, not just test results
+- `/claudikins-kernel:ship` - Documentation updates via GRFP methodology, commit message drafting, PR creation with human approval at every stage
 
 Cross-command gates prevent skipping steps. State persists to JSON for session resume. File hashes ensure you ship what you verified.
 
