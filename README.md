@@ -32,7 +32,7 @@ A complete toolkit for Claude Code.
 
 1. Run `/plugins` in Claude Code
 2. Select **Marketplaces** > **Add Marketplace**
-3. Enter `elb-pr/claudikins-marketplace`
+3. Enter `fipnooone/claudikins-marketplace`
 4. Select which plugins you want to install
 
 ## Plugin Ecosystem
@@ -130,9 +130,9 @@ Choose your path based on what you want to accomplish.
 
 ## Kernel
 
-![claudikins-kernel](https://raw.githubusercontent.com/elb-pr/claudikins-kernel/main/assets/banner.png)
+![claudikins-kernel](https://raw.githubusercontent.com/fipnooone/claudikins-kernel/main/assets/banner.png)
 
-**Repository:** [claudikins-kernel](https://github.com/elb-pr/claudikins-kernel)
+**Repository:** [claudikins-kernel](https://github.com/fipnooone/claudikins-kernel)
 
 Four commands that enforce quality through gates:
 
