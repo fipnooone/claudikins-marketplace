@@ -46,6 +46,15 @@
       "version": "1.0.1"
     },
     {
+      "name": "claudikins-namer",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/fipnooone/claudikins-namer.git"
+      },
+      "description": "Brand name generation pipeline with AI-powered validation and scoring",
+      "version": "0.1.0"
+    },
+    {
       "name": "claudikins-automatic-context-manager",
       "source": {
         "source": "url",
