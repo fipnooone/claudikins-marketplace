@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
-  <img src="https://img.shields.io/badge/Plugins-5-green.svg" alt="5 Plugins">
+  <img src="https://img.shields.io/badge/Plugins-6-green.svg" alt="6 Plugins">
   <img src="https://img.shields.io/badge/Maintained-Yes-brightgreen.svg" alt="Maintained">
 </p>
 
@@ -19,6 +19,7 @@ A complete toolkit for Claude Code.
 - [Getting Started](#getting-started)
 - [Plugins](#plugins)
 - [Kernel](#kernel)
+- [Namer](#namer)
 - [Tool Executor](#tool-executor)
 - [GRFP](#grfp)
 - [klaus](#klaus)
@@ -44,6 +45,7 @@ flowchart TB
         kernel["kernel<br/>(workflow)"]
     end
 
+    namer["namer<br/>(naming)"]
     toolexec["tool-executor<br/>(infrastructure)"]
     grfp["grfp<br/>(documentation)"]
     klaus["klaus<br/>(debugging)"]
@@ -51,6 +53,7 @@ flowchart TB
 
     kernel -.->|recommended| toolexec
     kernel -.->|recommended| klaus
+    namer -.->|recommended| toolexec
     toolexec -->|enhances| grfp
     toolexec <-->|synergy| acm
 
@@ -58,15 +61,17 @@ flowchart TB
     acm -.->|enhances| toolexec
     acm -.->|enhances| grfp
     acm -.->|enhances| klaus
+    acm -.->|enhances| namer
 
     style kernel fill:#e74c3c,stroke:#c0392b,color:#fff
+    style namer fill:#f39c12,stroke:#d68910,color:#fff
     style toolexec fill:#2c3e50,stroke:#1a252f,color:#fff
     style grfp fill:#9b59b6,stroke:#7b39a6,color:#fff
     style klaus fill:#e91e63,stroke:#c2185b,color:#fff
     style acm fill:#e65100,stroke:#bf360c,color:#fff
 ```
 
-**kernel** is the recommended starting point - it orchestrates the full development workflow. **tool-executor** provides MCP infrastructure that enhances grfp's Gemini integration. **acm** preserves context across all plugins. **klaus** pairs well with kernel for debugging sessions.
+**kernel** is the recommended starting point - it orchestrates the full development workflow. **namer** runs a parallel naming pipeline with validation. **tool-executor** provides MCP infrastructure that enhances grfp's Gemini integration and namer's social/SEO checks. **acm** preserves context across all plugins. **klaus** pairs well with kernel for debugging sessions.
 
 ## Prerequisites
 
@@ -75,6 +80,7 @@ Claude Code is required for all plugins (latest version recommended).
 | Plugin        | Requirements                                                |
 | ------------- | ----------------------------------------------------------- |
 | kernel        | `jq`, `git`, `sha256sum`, `find`                            |
+| namer         | `jq`, `python3` (tool-executor recommended for validation)  |
 | tool-executor | Node.js 18+, configured MCP servers                         |
 | grfp          | None (tool-executor strongly recommended for Gemini access) |
 | klaus         | None                                                        |
@@ -90,7 +96,7 @@ Choose your path based on what you want to accomplish.
 
 **Install:** Select all plugins from the marketplace.
 
-**What you get:** All 5 plugins - kernel (workflow), tool-executor (MCP infrastructure), grfp (documentation), klaus (debugging), and acm (context preservation).
+**What you get:** All 6 plugins - kernel (workflow), namer (naming), tool-executor (MCP infrastructure), grfp (documentation), klaus (debugging), and acm (context preservation).
 
 ### Full Development Workflow
 
@@ -99,6 +105,14 @@ Choose your path based on what you want to accomplish.
 **Install:** claudikins-kernel, claudikins-tool-executor, claudikins-automatic-context-manager
 
 **What you get:** 4-command pipeline (plan, execute, verify, ship), MCP tool access without context bloat, and automatic context preservation for long sessions.
+
+### Brand Naming
+
+**For:** Users who need to generate and validate brand names.
+
+**Install:** claudikins-namer, claudikins-tool-executor
+
+**What you get:** Two-command naming pipeline (brief, run) with parallel generation across 7 strategies, domain/social/SEO/cultural validation, and ranked reports.
 
 ### Documentation Focus
 
@@ -121,6 +135,7 @@ Choose your path based on what you want to accomplish.
 | Plugin                          | Category       | Description                                                                                         |
 | ------------------------------- | -------------- | --------------------------------------------------------------------------------------------------- |
 | [kernel](#kernel)               | Workflow       | 4-command pipeline with isolated agents, cross-command gates, and JSON state persistence            |
+| [namer](#namer)                 | Naming         | Brand name generation with parallel strategies, domain/social validation, and ranked reports        |
 | [tool-executor](#tool-executor) | Infrastructure | Meta-MCP server with semantic tool search, sandboxed TypeScript execution, and workspace API        |
 | [grfp](#grfp)                   | Documentation  | 5-phase README pipeline: deep-dive, crystal-ball, brain-jam, think-tank, pen-wielding               |
 | [klaus](#klaus)                 | Debugging      | 8-phase systematic debugging wrapped in theatrical Germanic exasperation and imaginary Pong         |
@@ -144,6 +159,25 @@ Four commands that enforce quality through gates:
 Cross-command gates prevent skipping steps. State persists to JSON for session resume. File hashes ensure you ship what you verified.
 
 **Works best with:** [tool-executor](#tool-executor) (MCP access), [klaus](#klaus) (debugging), [acm](#acm) (context preservation). Kernel is recommended for all plugins.
+
+---
+
+## Namer
+
+**Repository:** [claudikins-namer](https://github.com/fipnooone/claudikins-namer)
+
+Brand naming is harder than it looks. You need creative candidates, and then you need to check if the domain is taken, the Twitter handle is free, and the name doesn't mean something unfortunate in another language.
+
+Namer runs a two-command pipeline:
+
+- `/claudikins-namer:brief` - Interactive interview to capture product context, audience, tone, and constraints. Selects from 7 naming strategies.
+- `/claudikins-namer:run` - Spawns parallel name-crafter agents (one per strategy), validates candidates against domain availability (RDAP), social media handles (Apify), SEO, and cultural fit, then produces a ranked report.
+
+Four agents handle different parts: brand-strategist (interview), name-crafter (generation, runs in parallel), name-validator (domain/social/SEO/cultural checks), brand-reporter (ranked report with phonetic analysis across 10 languages).
+
+Validation is honest. If MCP tools aren't available, checks are marked "unchecked" - not faked.
+
+**Works best with:** [tool-executor](#tool-executor) (enables Apify social checks, Gemini SEO analysis), [acm](#acm) (preserves state in long naming sessions).
 
 ---
 
