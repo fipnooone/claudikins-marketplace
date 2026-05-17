@@ -5,7 +5,7 @@
     "email": "contact@fipnoo.one"
   },
   "metadata": {
-    "description": "Claude Code plugins by Claudikins",
+    "description": "Claude Code/OpenClaude-compatible plugins by Claudikins",
     "version": "1.0.0"
   },
   "plugins": [
@@ -16,7 +16,7 @@
         "url": "https://github.com/fipnooone/claudikins-kernel.git"
       },
       "description": "Structured workflow plugin enforcing plan → execute → verify → ship with isolated agents, mandatory checkpoints, and state persistence.",
-      "version": "1.7.4"
+      "version": "1.7.6"
     },
     {
       "name": "claudikins-tool-executor",
@@ -25,7 +25,7 @@
         "url": "https://github.com/fipnooone/claudikins-tool-executor.git"
       },
       "description": "Meta-MCP server consolidating multiple MCPs into 3 context-efficient tools with semantic search. Reduces token usage from ~25% to 0.5% of context window.",
-      "version": "1.0.2"
+      "version": "1.0.3"
     },
     {
       "name": "claudikins-grfp",
@@ -52,7 +52,7 @@
         "url": "https://github.com/fipnooone/claudikins-namer.git"
       },
       "description": "Brand name generation pipeline with AI-powered validation and scoring",
-      "version": "0.1.0"
+      "version": "0.1.1"
     },
     {
       "name": "claudikins-automatic-context-manager",

@@ -8,7 +8,7 @@
 
 # Claudikins Marketplace
 
-A complete toolkit for Claude Code.
+A complete toolkit for Claude Code and OpenClaude-compatible plugin runtimes.
 
 <details>
 <summary><strong>Table of Contents</strong></summary>
@@ -31,7 +31,7 @@ A complete toolkit for Claude Code.
 
 ## Quick Install
 
-1. Run `/plugins` in Claude Code
+1. Run `/plugins` in Claude Code or the equivalent plugin manager in OpenClaude
 2. Select **Marketplaces** > **Add Marketplace**
 3. Enter `fipnooone/claudikins-marketplace`
 4. Select which plugins you want to install
@@ -75,16 +75,16 @@ flowchart TB
 
 ## Prerequisites
 
-Claude Code is required for all plugins (latest version recommended).
+Claude Code or OpenClaude-compatible plugin runtime is required for all plugins (latest version recommended).
 
-| Plugin        | Requirements                                                |
-| ------------- | ----------------------------------------------------------- |
-| kernel        | `jq`, `git`, `sha256sum`, `find`                            |
-| namer         | `jq` (tool-executor recommended for validation)             |
-| tool-executor | Node.js 18+, configured MCP servers                         |
-| grfp          | None (tool-executor strongly recommended for Gemini access) |
-| klaus         | None                                                        |
-| acm           | None                                                        |
+| Plugin        | Requirements                                                   |
+| ------------- | -------------------------------------------------------------- |
+| kernel        | `jq`, `git`, `sha256sum` (or `shasum -a 256` on macOS), `find` |
+| namer         | `jq` (tool-executor recommended for validation)                |
+| tool-executor | Node.js 18+, configured MCP servers                            |
+| grfp          | None (tool-executor strongly recommended for Gemini access)    |
+| klaus         | None                                                           |
+| acm           | None                                                           |
 
 ## Getting Started
 
@@ -183,9 +183,9 @@ Validation is honest. If MCP tools aren't available, checks are marked "unchecke
 
 ## Tool Executor
 
-![claudikins-tool-executor](https://raw.githubusercontent.com/elb-pr/claudikins-tool-executor/main/assets/banner.png)
+![claudikins-tool-executor](https://raw.githubusercontent.com/fipnooone/claudikins-tool-executor/main/assets/banner.png)
 
-**Repository:** [claudikins-tool-executor](https://github.com/elb-pr/claudikins-tool-executor)
+**Repository:** [claudikins-tool-executor](https://github.com/fipnooone/claudikins-tool-executor)
 
 MCP tools eat context. A typical setup with 5-6 servers burns 25% of your context window just listing available tools.
 
